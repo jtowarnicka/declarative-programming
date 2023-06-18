@@ -26,3 +26,13 @@
 > (define (fun x) ((iter (lambda (x) (+ x 1)) 3) x))
 
 > (fun 5)
+
+; (define (iter f n)
+;     (lambda (x) 
+;         (if (= n 0) x
+;             ((iter f (- n 1)) (f x)))))
+
+; (define (double a)
+;     (* a 2))
+
+; ((iter double 3) 5)

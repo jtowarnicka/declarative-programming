@@ -41,6 +41,13 @@
 > (last '(1 2 3 4 5))
 
 
+; (define (reverse-helper l reversed)
+;     (if (null? l) reversed
+;     (reverse-helper (cdr l) (cons (car l) reversed))
+; ))
+; (define (reverse l)
+;     (reverse-helper l '()))
+
 > (define (reverse l)
     (if (null? l) 
         '()
@@ -90,3 +97,13 @@
 
 > (split 3 '(1 3 4 2 5))
 
+
+; (define (split-helper x l m n)
+;     (cond [(null? l) (list m n)]
+;         [(>= x (car l)) (split-helper x (cdr l) (cons (car l) m) n)]
+;         [else (split-helper x (cdr l) m (cons (car l) n))]
+;     )
+; )
+
+; (define (split x l) (split-helper x l '() '()))
+; (split 5 '(5 6 7 4 3 2 10))
